@@ -1,15 +1,19 @@
-import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+import { Mail, Send } from "lucide-react";
 
 const ContactSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {  // Remove TypeScript type annotation
     e.preventDefault();
     toast({
       title: "Message sent!",
@@ -18,175 +22,102 @@ const ContactSection = () => {
     setFormData({ name: "", email: "", message: "" });
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {  // Remove TypeScript type annotation
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="font-body text-primary text-sm tracking-[0.3em] uppercase mb-4">
-            Contact
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Let's Work <span className="text-gradient">Together</span>
-          </h2>
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's create something amazing.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-gradient-gold rounded-xl">
-                <Mail className="w-6 h-6 text-primary-foreground" />
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p className="text-lg text-gray-600">
+              Have a project in mind? Let's create something amazing together.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <p className="text-gray-600">hello@example.com</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                  Email
-                </h3>
-                <a
-                  href="mailto:hello@johndoe.com"
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  hello@johndoe.com
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-gradient-gold rounded-xl">
-                <Phone className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                  Phone
-                </h3>
-                <a
-                  href="tel:+1234567890"
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +1 (234) 567-890
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-gradient-gold rounded-xl">
-                <MapPin className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                  Location
-                </h3>
-                <p className="font-body text-muted-foreground">
-                  San Francisco, CA
+              
+              <div className="mt-12 p-8 bg-white rounded-2xl shadow-lg border border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Talk</h3>
+                <p className="text-gray-600 mb-8">
+                  I'm always open to discussing new opportunities and creative projects.
                 </p>
               </div>
             </div>
-
-            {/* Social Links */}
-            <div className="pt-8 border-t border-border">
-              <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                Follow Me
-              </h3>
-              <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="p-3 bg-card border border-border rounded-xl hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  <Github size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-3 bg-card border border-border rounded-xl hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-3 bg-card border border-border rounded-xl hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  <Twitter size={20} />
-                </a>
-              </div>
+            
+            <div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project..."
+                    rows={5}
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <Button type="submit" className="w-full" size="lg">
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="font-body text-sm text-foreground mb-2 block"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-card border border-border rounded-xl font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                placeholder="Your name"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="font-body text-sm text-foreground mb-2 block"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-card border border-border rounded-xl font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="font-body text-sm text-foreground mb-2 block"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 bg-card border border-border rounded-xl font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                placeholder="Tell me about your project..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-gold text-primary-foreground font-body font-medium rounded-xl shadow-glow hover:scale-[1.02] transition-transform duration-300"
-            >
-              <Send size={18} />
-              Send Message
-            </button>
-          </form>
         </div>
       </div>
     </section>
