@@ -17,20 +17,20 @@ const HeroSection = () => {
 
           {/* Name */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 opacity-0 animate-fade-up animation-delay-200">
-            <span className="text-foreground">John</span>{" "}
-            <span className="text-gradient">Doe</span>
+            <span className="text-foreground">Hasanuzzaman</span>{" "}
+            <span className="text-gradient">Rony</span>
           </h1>
 
           {/* Title */}
           <p className="font-display text-xl md:text-2xl text-muted-foreground mb-8 opacity-0 animate-fade-up animation-delay-400">
-            Creative Developer & UI Designer
+            Full Stack Developer -Asp.Net Core | React | SQL Server
           </p>
 
           {/* Description */}
           <p className="font-body text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed opacity-0 animate-fade-up animation-delay-600">
-            I craft beautiful digital experiences that blend innovative design
-            with cutting-edge technology. Let's build something extraordinary
-            together.
+            Crafting seamless web experiences with a blend of robust backend
+            solutions and dynamic frontend designs. Let's build something
+            amazing together!
           </p>
 
           {/* CTA Buttons */}
