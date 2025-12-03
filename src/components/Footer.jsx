@@ -8,7 +8,7 @@ const Footer = () => {
           </a>
           
           <p className="font-body text-sm text-muted-foreground">
-            © {new Date().getFullYear()} John Doe. All rights reserved.
+            © {new Date().getFullYear()} Hasanuzzaman Rony. All rights reserved.
           </p>
           
           <div className="flex gap-6">

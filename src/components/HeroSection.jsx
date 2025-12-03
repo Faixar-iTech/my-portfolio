@@ -22,16 +22,13 @@ const HeroSection = () => {
           </h1>
 
           {/* Title */}
-          <p className="font-display text-xl md:text-2xl text-muted-foreground mb-8 opacity-0 animate-fade-up animation-delay-400">
-            Full Stack Developer -Asp.Net Core | React | SQL Server
-          </p>
-
+         <p className="font-display text-xl md:text-2xl text-muted-foreground mb-8 opacity-0 animate-fade-up animation-delay-400">
+  Full Stack Developer — ASP.NET Core | React | SQL Server
+</p>
           {/* Description */}
           <p className="font-body text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed opacity-0 animate-fade-up animation-delay-600">
-            Crafting seamless web experiences with a blend of robust backend
-            solutions and dynamic frontend designs. Let's build something
-            amazing together!
-          </p>
+  Building high-performance, scalable, and user-focused web applications with clean architecture and modern technologies. Passionate about creating meaningful digital solutions that drive real business impact.
+</p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-up animation-delay-800">

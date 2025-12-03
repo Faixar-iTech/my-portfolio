@@ -26,44 +26,46 @@ const AboutSection = () => {
           {/* Left Content */}
           <div>
             <p className="font-body text-primary text-sm tracking-[0.3em] uppercase mb-4">
-              About Me
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Passionate about creating{" "}
-              <span className="text-gradient">digital excellence</span>
-            </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              With over 5 years of experience in web development and design, I
-              specialize in creating immersive digital experiences that push
-              boundaries. My approach combines technical expertise with creative
-              vision to deliver solutions that not only look stunning but
-              perform exceptionally.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-8">
-              When I'm not coding, you'll find me exploring new design trends,
-              contributing to open-source projects, or sharing knowledge with
-              the developer community.
-            </p>
+  About Me
+</p>
 
+<h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+  Passionate about creating{" "}
+  <span className="text-gradient">scalable digital solutions</span>
+</h2>
+
+<p className="font-body text-muted-foreground leading-relaxed mb-6">
+  With over 8 years of experience as a Full Stack .NET Developer, I specialize in building
+  enterprise-grade applications using ASP.NET Core, React, and SQL Server. 
+  I focus on crafting clean, scalable, and secure solutions—whether it's ERP modules, 
+  HRM systems, procurement workflows, or business automation tools.
+</p>
+
+<p className="font-body text-muted-foreground leading-relaxed mb-8">
+  Beyond coding, I enjoy exploring cloud technologies, improving database performance, 
+  and sharing knowledge with the developer community. My goal is simple—deliver 
+  impactful digital products that solve real business problems.
+</p>
             <div className="flex flex-wrap gap-4">
               <div className="px-4 py-2 bg-secondary rounded-full">
                 <span className="font-body text-sm text-secondary-foreground">
+                  Asp.Net Core
+                </span>
+              </div>
+              <div className="px-4 py-2 bg-secondary rounded-full">
+                <span className="font-body text-sm text-secondary-foreground">
+                  JavaScript
+                </span>
+              </div>
+              <div className="px-4 py-2 bg-secondary rounded-full">
+                <span className="font-body text-sm text-secondary-foreground">
+                  SQL Server
+                </span>
+
+              </div>
+              <div className="px-4 py-2 bg-secondary rounded-full">
+                <span className="font-body text-sm text-secondary-foreground">
                   React.js
-                </span>
-              </div>
-              <div className="px-4 py-2 bg-secondary rounded-full">
-                <span className="font-body text-sm text-secondary-foreground">
-                  TypeScript
-                </span>
-              </div>
-              <div className="px-4 py-2 bg-secondary rounded-full">
-                <span className="font-body text-sm text-secondary-foreground">
-                  Node.js
-                </span>
-              </div>
-              <div className="px-4 py-2 bg-secondary rounded-full">
-                <span className="font-body text-sm text-secondary-foreground">
-                  UI/UX Design
                 </span>
               </div>
             </div>
